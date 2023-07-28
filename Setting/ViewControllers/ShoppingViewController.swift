@@ -14,13 +14,15 @@ class ShoppingViewController: UIViewController {
     @IBOutlet var addButton: UIButton!
     @IBOutlet var shoppingTableView: UITableView!
     
-    var textArray = ["그립톡 구매하기", "사이다 구매", "아이패드 케이스 최저가 알아보기", "양말"]
+    var todo = ToDoInformation()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         shoppingTableView.dataSource = self
         shoppingTableView.delegate = self
+        
+        shoppingTableView.rowHeight = 60
         
         designComponents()
         
@@ -31,7 +33,8 @@ class ShoppingViewController: UIViewController {
             if text == "" {
                 showAlert(message: "구매할 품목을 입력해주세요!")
             } else {
-                textArray.append(text)
+                todo.list.append(ToDo(title: text, check: false, like: false))
+                addTextField.text = nil
             }
         } else {
             return
@@ -42,10 +45,6 @@ class ShoppingViewController: UIViewController {
     }
     
     @IBAction func keyboardReturnTapped(_ sender: UITextField) {
-        view.endEditing(true)
-    }
-    
-    @IBAction func gestureTapped(_ sender: UITapGestureRecognizer) {
         view.endEditing(true)
     }
     
@@ -67,17 +66,26 @@ class ShoppingViewController: UIViewController {
 
 extension ShoppingViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return textArray.count
+        return todo.list.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "shoppingCell") else {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: ShoppingTableViewCell.identifier) as? ShoppingTableViewCell else {
             return UITableViewCell()
         }
         
-        cell.textLabel?.text = textArray[indexPath.row]
+        let row = todo.list[indexPath.row]
+        
+//        cell.isUserInteractionEnabled = true
+        cell.configureCell(row: row)
         
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        print("\(indexPath.row)선택됨")
+        todo.list[indexPath.row].check = todo.list[indexPath.row].check == true ? false : true
+        shoppingTableView.reloadData()
     }
     
     

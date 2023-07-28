@@ -17,6 +17,9 @@
 		1485E88A2A7250B8008C6720 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1485E8892A7250B8008C6720 /* SettingViewController.swift */; };
 		1485E88C2A7250C2008C6720 /* ShoppingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1485E88B2A7250C2008C6720 /* ShoppingViewController.swift */; };
 		1485E88E2A7273AE008C6720 /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1485E88D2A7273AE008C6720 /* Extension.swift */; };
+		1485E89C2A73A2F7008C6720 /* ShoppingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1485E89B2A73A2F7008C6720 /* ShoppingTableViewCell.swift */; };
+		1485E89E2A73A3B8008C6720 /* ToDo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1485E89D2A73A3B8008C6720 /* ToDo.swift */; };
+		1485E8A02A73A40E008C6720 /* ToDoInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1485E89F2A73A40E008C6720 /* ToDoInformation.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +35,9 @@
 		1485E8892A7250B8008C6720 /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
 		1485E88B2A7250C2008C6720 /* ShoppingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingViewController.swift; sourceTree = "<group>"; };
 		1485E88D2A7273AE008C6720 /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
+		1485E89B2A73A2F7008C6720 /* ShoppingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingTableViewCell.swift; sourceTree = "<group>"; };
+		1485E89D2A73A3B8008C6720 /* ToDo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDo.swift; sourceTree = "<group>"; };
+		1485E89F2A73A40E008C6720 /* ToDoInformation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoInformation.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,10 +72,8 @@
 			children = (
 				1485E8732A724F07008C6720 /* AppDelegate.swift */,
 				1485E8752A724F07008C6720 /* SceneDelegate.swift */,
-				1485E8772A724F07008C6720 /* ViewController.swift */,
-				1485E8872A725087008C6720 /* AttentionViewController.swift */,
-				1485E8892A7250B8008C6720 /* SettingViewController.swift */,
-				1485E88B2A7250C2008C6720 /* ShoppingViewController.swift */,
+				1485E8A12A73A4DC008C6720 /* Model */,
+				1485E8A22A73A4E2008C6720 /* ViewControllers */,
 				1485E88D2A7273AE008C6720 /* Extension.swift */,
 				1485E8792A724F07008C6720 /* Main.storyboard */,
 				1485E87C2A724F09008C6720 /* Assets.xcassets */,
@@ -77,6 +81,27 @@
 				1485E8812A724F09008C6720 /* Info.plist */,
 			);
 			path = Setting;
+			sourceTree = "<group>";
+		};
+		1485E8A12A73A4DC008C6720 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				1485E89D2A73A3B8008C6720 /* ToDo.swift */,
+				1485E89F2A73A40E008C6720 /* ToDoInformation.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		1485E8A22A73A4E2008C6720 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				1485E8772A724F07008C6720 /* ViewController.swift */,
+				1485E8872A725087008C6720 /* AttentionViewController.swift */,
+				1485E8892A7250B8008C6720 /* SettingViewController.swift */,
+				1485E88B2A7250C2008C6720 /* ShoppingViewController.swift */,
+				1485E89B2A73A2F7008C6720 /* ShoppingTableViewCell.swift */,
+			);
+			path = ViewControllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -150,7 +175,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1485E89E2A73A3B8008C6720 /* ToDo.swift in Sources */,
 				1485E88A2A7250B8008C6720 /* SettingViewController.swift in Sources */,
+				1485E8A02A73A40E008C6720 /* ToDoInformation.swift in Sources */,
+				1485E89C2A73A2F7008C6720 /* ShoppingTableViewCell.swift in Sources */,
 				1485E8782A724F07008C6720 /* ViewController.swift in Sources */,
 				1485E88E2A7273AE008C6720 /* Extension.swift in Sources */,
 				1485E8882A725087008C6720 /* AttentionViewController.swift in Sources */,
