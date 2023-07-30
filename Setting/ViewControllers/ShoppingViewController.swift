@@ -76,14 +76,12 @@ extension ShoppingViewController: UITableViewDataSource, UITableViewDelegate {
         
         let row = todo.list[indexPath.row]
         
-//        cell.isUserInteractionEnabled = true
         cell.configureCell(row: row)
         
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print("\(indexPath.row)선택됨")
         todo.list[indexPath.row].check = todo.list[indexPath.row].check == true ? false : true
         shoppingTableView.reloadData()
     }

@@ -18,7 +18,11 @@ class ShoppingTableViewCell: UITableViewCell {
     
     
     @IBAction func bookmarkButtonTapped(_ sender: UIButton) {
-        
+        if bookmarkButton.imageView?.image == UIImage(systemName: "star") {
+            bookmarkButton.setImage(UIImage(systemName: "star.fill"), for: .normal)
+        } else {
+            bookmarkButton.setImage(UIImage(systemName: "star"), for: .normal)
+        }
     }
     
     func configureCell(row: ToDo) {
